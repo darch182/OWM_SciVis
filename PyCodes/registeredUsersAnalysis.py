@@ -17,6 +17,8 @@ registeredUsers['Data'] = pd.to_datetime(registeredUsers['Data'])
 registeredUsers = registeredUsers.sort_values(by="Data")
 print(registeredUsers)
 registeredUsers.plot(x = "Data", y = "Valore", title = "Trend registrazioni in tutta Milano", linestyle="solid", legend=False, linewidth=1.5,  color="#ff0000")
+totalRegisteredUsers = pd.DataFrame(registeredUsers)["Valore"].sum()
+print(totalRegisteredUsers)
 plt.xticks(rotation=0)
 plt.show()
 
