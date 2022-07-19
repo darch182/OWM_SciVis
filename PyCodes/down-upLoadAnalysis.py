@@ -34,7 +34,7 @@ Municipio = {
     "OWM Zona9" : "Municipio 9",
 }
 municipi = ["Municipio 1", "Municipio 2", "Municipio 3", "Municipio 4", "Municipio 5", "Municipio 6", "Municipio 7", "Municipio 8", "Municipio 9",]
-downloadTraffic = pd.read_csv(r'C:\Unimi\VisualizzazioneScientifica\dataset\open_wifi_project\sessiondownloadtraffic.csv', sep=';')
+downloadTraffic = pd.read_csv(r'OWM_SciVis\Datasets\sessiondownloadtraffic.csv', sep=';')
 uploadTraffic = pd.read_csv(r'C:\Unimi\VisualizzazioneScientifica\dataset\open_wifi_project\sessionuploadtraffic.csv', sep=';')
 downloadTraffic = pd.DataFrame (downloadTraffic, columns=[ 'Tipologia_API', 'Zona', 'Data', 'Valore'])
 uploadTraffic = pd.DataFrame (uploadTraffic, columns=[ 'Tipologia_API', 'Zona', 'Data', 'Valore'])
