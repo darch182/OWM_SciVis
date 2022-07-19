@@ -10,7 +10,7 @@ from mplcursors import cursor as cursor
 import seaborn as sns
 import decimal
 import os
-loginUser = pd.read_csv(r'C:\Unimi\VisualizzazioneScientifica\dataset\open_wifi_project\logincountzone.csv', sep=';')
+loginUser = pd.read_csv(r'C:\Unimi\VisualizzazioneScientifica\dataset\open_wifi_project\OWM_SciVis\Datasets\logincountzone.csv', sep=';')
 loginUser = pd.DataFrame (loginUser, columns=[ 'Tipologia_API', 'Zona', 'Data', 'Valore'])
 loginUser['Data'] = pd.to_datetime(loginUser['Data'])
 sns.set()

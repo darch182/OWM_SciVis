@@ -11,7 +11,7 @@ import decimal
 import os
 sns.set()
 colorArray = [[1, 0 , 0, 1]]
-registeredUsers = pd.read_csv(r'C:\Unimi\VisualizzazioneScientifica\dataset\open_wifi_project\registered.csv', sep=';')
+registeredUsers = pd.read_csv(r'C:\Unimi\VisualizzazioneScientifica\dataset\open_wifi_project\OWM_SciVis\Datasets\registered.csv', sep=';')
 registeredUsers = pd.DataFrame (registeredUsers, columns=[ 'Data', 'Valore'])
 registeredUsers['Data'] = pd.to_datetime(registeredUsers['Data'])
 registeredUsers = registeredUsers.sort_values(by="Data")

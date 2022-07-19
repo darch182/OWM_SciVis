@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set(style="whitegrid", palette="pastel", color_codes=True)
 sns.mpl.rc("figure", figsize=(10,6))
-shp_path = "C:/Unimi/VisualizzazioneScientifica/dataset/open_wifi_project/shapefileMunicipi/Municipi.shp"
+shp_path = "C:\Unimi\VisualizzazioneScientifica\dataset\open_wifi_project\OWM_SciVis\Datasets\shapefileMunicipi\Municipi.shp"
 assert os.path.exists(shp_path), "Input file does not exist."
 sf = shp.Reader(shp_path)
 len(sf.shapes())
@@ -62,14 +62,14 @@ def plot_shape(id, s=None):
 DIST_NAME = 'Milano'
 #to get the id of the city map to be plotted
 #com_id = df[df.MUNICIPIO == 1].index.get_values()[0]
-plot_shape(com_id, DIST_NAME)
-sf.shape(com_id)
-print(df[df.MUNICIPIO == 1].index)
-print(df[(df.MUNICIPIO == 1)].index[0])
-plot_shape(0, "Milano")
-sf.shape(0)
+#plot_shape(com_id, DIST_NAME)
+#sf.shape(com_id)
+#print(df[df.MUNICIPIO == 1].index)
+#print(df[(df.MUNICIPIO == 1)].index[0])
+#plot_shape(0, "Milano")
+#sf.shape(0)
 
-"""
+
 def plot_map(sf, x_lim = None, y_lim = None, figsize = (11,9)):
     plt.figure(figsize = figsize)
     
@@ -98,6 +98,6 @@ def plot_map(sf, x_lim = None, y_lim = None, figsize = (11,9)):
         plt.ylim(y_lim)
     plt.show()
 #calling the function and passing required parameters to plot the full map
-plot_map(sf)"""
+plot_map(sf)
 
 
