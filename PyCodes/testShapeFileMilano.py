@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 sns.set(style="whitegrid", palette="pastel", color_codes=True)
 sns.mpl.rc("figure", figsize=(10,6))
-shp_path = "C:\Unimi\VisualizzazioneScientifica\dataset\open_wifi_project\OWM_SciVis\Datasets\shapefileMunicipi\Municipi.shp"
+shp_path = "C:/Unimi/VisualizzazioneScientifica/dataset/open_wifi_project/OWM_SciVis/Datasets/shapefileMunicipi/Municipi.shp"
 assert os.path.exists(shp_path), "Input file does not exist."
 sf = shp.Reader(shp_path)
 len(sf.shapes())

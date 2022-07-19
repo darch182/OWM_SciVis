@@ -54,7 +54,7 @@ trafficTemp["Upload"] = uploadTraffic["ValoreInGbytes"]
 
 
 
-"""trafficTemp['DayOfTheWeek'] = list(map(dayOfTheWeek, trafficTemp['Data']))
+trafficTemp['DayOfTheWeek'] = list(map(dayOfTheWeek, trafficTemp['Data']))
 trafficTemp['DayOfTheWeekString'] = list(map(lambda x: Settimana[x], trafficTemp['DayOfTheWeek']))
 del trafficTemp["Tipologia_API"]
 del trafficTemp["Valore"]
@@ -74,7 +74,7 @@ for i in range(1,10,1):
     trafficZoneVariable= trafficByDayANDZone.loc[trafficByDayANDZone['Zona'] == zonaInteressata, ['Zona', 'DayOfTheWeek', 'DayOfTheWeekString', 'DownloadTotal', 'UploadTotal']]
     trafficZoneVariable.sort_values(by='DayOfTheWeek')
     print(trafficZoneVariable)
-    plotTraffic = trafficZoneVariable.plot.bar(x = "DayOfTheWeekString", y= ["DownloadTotal","UploadTotal"], xlabel = "",tick_label=1, title = MunicipioInteressato,  color = ["blue", "red"] )
+    plotTraffic = trafficZoneVariable.plot.bar(x = "DayOfTheWeekString", y= ["DownloadTotal","UploadTotal"], xlabel = "",tick_label=1, title = MunicipioInteressato,  color = ["#00B337", "red"] )
     
     for p in plotTraffic.patches:
         plotTraffic.annotate(str(round(p.get_height(),2)), (p.get_x()+(p.get_width()*0.5), p.get_height() *1.005),  ha="center")
@@ -83,7 +83,6 @@ for i in range(1,10,1):
     plt.legend(["Traffico in Download", "Traffico in upload"])
     plt.xticks(rotation=0)
     plt.show()
-"""
 
 trafficDownloadMean = downloadTraffic.groupby(['Zona'])['ValoreInGbytes'].mean().reset_index(name = "MeanD")
 trafficUploadMean = uploadTraffic.groupby(['Zona'])['ValoreInGbytes'].mean().reset_index(name = "MeanU")
@@ -92,7 +91,7 @@ trafficMean["MeanU"] = trafficUploadMean["MeanU"]
 trafficMeanForPrint = trafficMean
 trafficMeanForPrint["Zona"] = municipi
 print(trafficMeanForPrint)
-plotMean = trafficMeanForPrint.plot.bar(x="Zona", y=["MeanD", "MeanU"], color = ["blue", "red"], title="Media traffico dati giornaliero per Municipio")
+plotMean = trafficMeanForPrint.plot.bar(x="Zona", y=["MeanD", "MeanU"], color = ["#00B337", "red"], title="Media traffico dati giornaliero per Municipio")
 for p in plotMean.patches:
         plotMean.annotate(str(round(p.get_height(),2)), (p.get_x()+(p.get_width()*0.5), p.get_height() *1.005),  ha="center")
 plt.ylabel("GigaBytes")
